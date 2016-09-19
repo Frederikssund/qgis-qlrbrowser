@@ -42,7 +42,7 @@ tags=qlr browse
 
 homepage=https://github.com/Septima/qgis-qlrbrowser
 category=Plugins
-icon=icon.png
+icon=resources/icon_qlr.png
 # experimental flag
 experimental=False
 

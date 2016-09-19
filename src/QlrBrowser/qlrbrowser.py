@@ -24,10 +24,16 @@ import os.path
 
 from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
 from PyQt4.QtGui import QAction, QIcon
+from PyQt4.QtCore import (
+    QFileInfo
+)
 
 # Import manager
 from .core.qlrmanager import QlrManager
 
+from qgis.core import (
+    QgsApplication
+)
 # Import the code for ui
 from .ui.dockwidget import DockWidget
 from .ui.qlrbrowser_settingsdialog import QlrBrowserSettingsDialog
@@ -177,7 +183,7 @@ class QlrBrowser:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/QlrBrowser/icon.png'
+        icon_path = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() +'/python/plugins/QlrBrowser/resources/icon_settings.png'
         self.add_action(
             icon_path,
             text=self.tr(u'Settings'),
